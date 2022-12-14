@@ -1,16 +1,18 @@
 package az.iktlab.lessons.exercise31;
 
-public class Human extends Main implements Ability{
+public abstract class Human {
 
     private String name;
     private String surname;
     private int age;
-    private String gender;
+    private Gender gender;
 
-    public Human() {
+    public Human(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
     }
 
-    public Human(String name, String surname, int age, String gender, Human father, Human mother) {
+    public Human(String name, String surname, int age, Gender gender) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -38,35 +40,18 @@ public class Human extends Main implements Ability{
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age < 0 || age > 200) {
+            throw new RuntimeException("Age must be between 0 and 200");
+        } else
+            this.age = age;
     }
 
-    public String getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
-    }
-
-    public void write() {
-        System.out.printf("%s write!",father.getName());
-    }
-
-    public void read() {
-        System.out.printf("%s read!",father.getName());
-    }
-
-    public void sing() {
-        System.out.printf("%s sing!",father.getName());
-    }
-
-    public void dance() {
-        System.out.printf("%s dance!",father.getName());
-    }
-
-    public void run() {
-        System.out.printf("%s run!",father.getName());
     }
 
     @Override
@@ -75,32 +60,7 @@ public class Human extends Main implements Ability{
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ", gender='" + gender +
+                ", gender=" + gender +
                 '}';
-    }
-
-    @Override
-    public void write(String word) {
-        
-    }
-
-    @Override
-    public void read(String word) {
-
-    }
-
-    @Override
-    public void sing(String word) {
-
-    }
-
-    @Override
-    public void dance(String word) {
-
-    }
-
-    @Override
-    public void run(String word) {
-
     }
 }
