@@ -1,20 +1,17 @@
 package az.iktlab.lessons.lesson13;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class pellSeries {
 
     public static void main(String[] args) {
 
-        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> list = new ArrayList<>(List.of(0, 1));
 
-        Integer a = 1, b = 0, c = null;
-        for (int i = 0; i < 15; i++) {
+        for (int i = 2; i < 15; i++) {
 
-            list.add(b);
-            c = b;
-            b = b * 2 + a;
-            a = c;
+            list.add(i, list.get(i - 2) + list.get(i - 1) * 2);
         }
         System.out.println(list);
     }
