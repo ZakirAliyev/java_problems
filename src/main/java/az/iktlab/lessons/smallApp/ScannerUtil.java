@@ -64,19 +64,19 @@ public class ScannerUtil {
     }
 
     public static void getPasswordFun(User user) {
-        boolean flag1 = true;
-        for (User elem : Application.userList) {
-            if (elem.getUsername().equals(user.getUsername())) {
-                flag1 = false;
-                break;
-            }
-        }
-        if (flag1) {
+//        boolean flag1 = true;
+//        for (User elem : Application.userList) {
+//            if (elem.getUsername().equals(user.getUsername())) {
+//                flag1 = false;
+//                break;
+//            }
+//        }
+//        if (flag1) {
             System.out.print("Please enter the password : ");
             user.setPassword(sc.nextLine());
-        } else {
-            getUsernameFun(user);
-        }
+//        } else {
+//            getUsernameFun(user);
+//        }
     }
 
     public static User getUserData() {
