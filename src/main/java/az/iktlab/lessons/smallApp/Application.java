@@ -12,9 +12,11 @@ public class Application {
     public static final List<Person> personList = new ArrayList<>();
     public static final List<User> userList = new ArrayList<>();
 
+    public static Long id_num = 0L;
+
+    public static boolean flag = true;
+
     public static void run() {
-        boolean flag = true;
-        Long id_num = 1L;
 
         while (flag) {
             showCommands();
@@ -22,9 +24,9 @@ public class Application {
 
             switch (cmd) {
                 case SP:
+                    id_num++;
                     Person person = ScannerUtil.getPersonData(id_num);
                     personService.savePerson(person);
-                    id_num++;
                     break;
                 case RU:
                     User user = ScannerUtil.getUserData();

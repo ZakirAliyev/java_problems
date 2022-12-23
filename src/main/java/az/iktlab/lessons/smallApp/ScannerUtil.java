@@ -34,7 +34,29 @@ public class ScannerUtil {
         return person;
     }
 
+    public static void getIdFun(User user) {
+        System.out.print("Please enter person_id :");
+        user.setId(sc.nextLong());
+        getIdData(user);
+    }
+
+    public static void getIdData(User user) {
+        boolean flag2 = false;
+        for (Person elem : Application.personList) {
+            if (elem.getId().equals(user.getId())) {
+                flag2 = true;
+                break;
+            }
+        }
+        if (flag2) {
+            getUsernameFun(user);
+        } else {
+            getIdFun(user);
+        }
+    }
+
     public static void getUsernameFun(User user) {
+        sc.nextLine();
         System.out.print("Please enter username : ");
         user.setUsername(sc.nextLine().toLowerCase());
 
@@ -52,8 +74,7 @@ public class ScannerUtil {
         if (flag1) {
             System.out.print("Please enter the password : ");
             user.setPassword(sc.nextLine());
-        }
-        else {
+        } else {
             getUsernameFun(user);
         }
     }
@@ -61,7 +82,11 @@ public class ScannerUtil {
     public static User getUserData() {
 
         User user = new User();
-        getUsernameFun(user);
+        if (Application.id_num==0) {
+            System.out.println("Person is invalid!");
+            Application.run();
+        } else
+            getIdFun(user);
         return user;
     }
 }

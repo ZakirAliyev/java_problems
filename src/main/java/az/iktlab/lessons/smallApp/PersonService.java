@@ -7,6 +7,6 @@ public class PersonService {
     }
 
     public void showPeople() {
-        Application.userList.forEach(System.out::println);
+        Application.personList.forEach(System.out::println);
     }
 }

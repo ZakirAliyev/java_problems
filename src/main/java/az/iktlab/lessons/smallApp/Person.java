@@ -10,6 +10,7 @@ public class Person {
     private String fatherName;
     private int age;
     private Gender gender;
+    private User user;
 
     public Long getId() {
         return id;
@@ -59,17 +60,25 @@ public class Person {
         this.gender = gender;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return age == person.age && Objects.equals(id, person.id) && Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && Objects.equals(fatherName, person.fatherName) && gender == person.gender;
+        return age == person.age && Objects.equals(id, person.id) && Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && Objects.equals(fatherName, person.fatherName) && gender == person.gender && Objects.equals(user, person.user);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, surname, fatherName, age, gender);
+        return Objects.hash(id, name, surname, fatherName, age, gender, user);
     }
 
     @Override
@@ -81,6 +90,7 @@ public class Person {
                 ", fatherName='" + fatherName + '\'' +
                 ", age=" + age +
                 ", gender=" + gender +
+                //", user=" + user +
                 '}';
     }
 }

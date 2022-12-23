@@ -2,12 +2,11 @@ package az.iktlab.lessons.smallApp;
 
 import java.util.Objects;
 
-public class User {
+public class User extends Person{
 
     private Long id;
     private String username;
     private String password;
-    private Person person;
 
     public Long getId() {
         return id;
@@ -33,28 +32,18 @@ public class User {
         this.password = password;
     }
 
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(person, user.person);
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username) && Objects.equals(password, user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, password, person);
+        return Objects.hash(id, username, password);
     }
-
-
 
 
     @Override
@@ -63,7 +52,6 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", person=" + person +
                 '}';
     }
 }
