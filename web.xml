@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+    <context-param>
+        <param-name>VTBilgisi</param-name>
+        <param-value>...</param-value>
+        <description>Veritabanı bağlantı bilgisi</description>
+    </context-param>
+    <servlet>
+        <servlet-name>OrnekServlet</servlet-name>
+        <servlet-class>com.yusufsezer.controller.OrnekServlet</servlet-class>
+        <init-param>
+            <param-name>KisiBilgisi</param-name>
+            <param-value>...</param-value>
+            <description>Özel bir bilgisi</description>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrnekServlet</servlet-name>
+        <url-pattern>/OrnekServlet</url-pattern>
+    </servlet-mapping>
+</web-app>

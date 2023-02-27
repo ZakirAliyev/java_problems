@@ -1,4 +1,4 @@
-package az.iktlab.lessons.lessonHacker;
+package az.iktlab.lessons.lessonHacker.java;
 
 import java.util.*;
 
