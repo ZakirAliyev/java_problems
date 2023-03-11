@@ -8,7 +8,7 @@ class Adder extends Arithmetic{
     }
 }
 
-public class Solution{
+public class hacker35{
     public static void main(String []args){
         // Create a new Adder object
         Adder a = new Adder();
