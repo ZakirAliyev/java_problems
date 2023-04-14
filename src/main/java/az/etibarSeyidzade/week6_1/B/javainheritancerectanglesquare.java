@@ -1,4 +1,4 @@
-package az.etibarSeyidzade.week6_1.A;
+package az.etibarSeyidzade.week6_1.B;
 
 class Rectangle {
     private int a, b;

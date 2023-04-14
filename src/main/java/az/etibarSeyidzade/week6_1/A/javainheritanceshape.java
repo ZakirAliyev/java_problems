@@ -1,4 +1,4 @@
-package az.etibarSeyidzade.week6_1.B;
+package az.etibarSeyidzade.week6_1.A;
 
 class Shape {
     private final String shapeName;
