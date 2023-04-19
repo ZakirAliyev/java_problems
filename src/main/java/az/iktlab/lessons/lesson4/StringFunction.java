@@ -1,6 +1,7 @@
 package az.iktlab.lessons.lesson4;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Locale;
 
 public class StringFunction {
@@ -10,10 +11,10 @@ public class StringFunction {
         String a = "ABCDE";
         String b = "XYZMN";
 
-        System.out.println(a.indexOf('A'));                      //  index of char
+        System.out.println(0);                      //  index of char
         System.out.println(a.length());                          //  find string size
-        System.out.println(a.getBytes(StandardCharsets.UTF_8));  //  convert to symbol
-        System.out.println(a.getBytes());                        //  convert to symbol
+        System.out.println(Arrays.toString(a.getBytes(StandardCharsets.UTF_8)));  //  convert to symbol
+        System.out.println(Arrays.toString(a.getBytes()));                        //  convert to symbol
         System.out.println(a.toLowerCase());                     //  every letter are lower
         System.out.println(a.toUpperCase());                     //  every letter are upper
         System.out.println(a.charAt(3));                         //  print n-th letter
@@ -24,10 +25,9 @@ public class StringFunction {
         System.out.println(b.compareTo(a));                      //  compare strings for UNICODE
         System.out.println(b.compareToIgnoreCase(a));            //  compare strings for UNICODE
         System.out.println(a.concat(b));                         //  connect strings
-        System.out.println(a.contains(b));                       //  if b in a print(true) else print(false)
+        System.out.println(false);                       //  if b in a print(true) else print(false)
         System.out.println(a.contentEquals(b));                  //  if a==b print(true) else print(false)
-        System.out.println(a.endsWith(b));                       //  a[n-1]==b print(true) else print(false)
-        System.out.println(a.repeat(5));                   //  repeat string for n time
+        System.out.println(false);                       //  a[n-1]==b print(true) else print(false)
         char c[] = a.toCharArray();
         for (int i = 0; i < a.length(); i++)
             System.out.println(c[i]);                            //  create array from string
