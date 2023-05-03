@@ -17,11 +17,18 @@ public class javacollectionsstudentsubject {
 
             List<String> students = new ArrayList<>();
             String a = sc.next();
+            boolean flag = true;
             for (Student elem : list) {
                 if (elem.getSubject().equals(a)) {
                     students.add(elem.getSurname());
-                } else if (elem.getSurname().equals(a)) {
-                    students.add(elem.getSubject());
+                    flag = false;
+                }
+            }
+            if (flag) {
+                for (Student elem : list) {
+                    if (elem.getSurname().equals(a)) {
+                        students.add(elem.getSubject());
+                    }
                 }
             }
             Collections.sort(students);
