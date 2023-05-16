@@ -6,20 +6,17 @@ import java.util.*;
 
 class Add {
 
-    public void add(int n1, int n2) {
+    public void add(int... numbers) {
+        int sum = 0;
+        String a = "";
+        for (int i : numbers) {
+            sum += i;
+            System.out.print(a + i);
+            a = "+";
+        }
+        System.out.println("=" + sum);
     }
-
-    public void add(int n1, int n2, int n3) {
-    }
-
-    public void add(int n1, int n2, int n3, int n4, int n5) {
-    }
-
-    public void add(int n1, int n2, int n3, int n4, int n5, int n6) {
-    }
-
 }
-
 
 public class hacker38 {
 
