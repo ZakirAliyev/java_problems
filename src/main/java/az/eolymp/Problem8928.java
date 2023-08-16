@@ -3,12 +3,16 @@ package az.eolymp;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class Problem8927 {
+public class Problem8928 {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
+
         BigInteger bigInteger = sc.nextBigInteger();
+
         if (bigInteger.isProbablePrime(1)) {
-            System.out.println(bigInteger);
+            System.out.println(1);
         } else {
             int d = 0;
             for (int i = 2; i <= bigInteger.intValue(); i++) {
@@ -17,7 +21,7 @@ public class Problem8927 {
                     break;
                 }
             }
-            System.out.println(d);
+            System.out.println(bigInteger.intValue() / d);
         }
     }
 }

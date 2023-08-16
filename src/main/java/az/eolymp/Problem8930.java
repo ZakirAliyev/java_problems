@@ -8,8 +8,8 @@ public class Problem8930 {
 
         Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        int i = 2;
+        long n = sc.nextLong();
+        long i = 2;
 
         while (n != 1) {
             if (n % i == 0) {
