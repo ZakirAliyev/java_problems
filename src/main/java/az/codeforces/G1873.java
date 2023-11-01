@@ -1,4 +1,4 @@
-package az.codeforces.div4_886;
+package az.codeforces;
 
 import java.util.Scanner;
 

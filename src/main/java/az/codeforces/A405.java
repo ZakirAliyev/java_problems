@@ -18,9 +18,11 @@ public class A405 {
             list.add(sc.nextInt());
         }
 
-        int mx = Collections.max(list);
+        Collections.sort(list);
 
-        int[][] arr = new int[n][mx];
+        for (int elem : list) {
+            System.out.print(elem + " ");
+        }
 
     }
 }
