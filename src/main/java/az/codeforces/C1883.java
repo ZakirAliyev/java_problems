@@ -1,5 +1,7 @@
 package az.codeforces;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class C1883 {
@@ -10,25 +12,25 @@ public class C1883 {
         while (t-- > 0) {
             int n = sc.nextInt();
             int k = sc.nextInt();
-            int[] a = new int[n + 1];
+            List<Integer> list = new ArrayList<>();
 
-            for (int i = 1; i <= n; i++) {
-                a[i] = sc.nextInt() % k;
+            for (int i = 0; i < n; i++) {
+                list.add(sc.nextInt() % k);
             }
 
-            int ans = k;
-            for (int i = 1; i <= n; i++) {
-                ans = Math.min(ans, (k - a[i]) % k);
+            int sum = k;
+            for (int i = 0; i < n; i++) {
+                sum = Math.min(sum, (k - list.get(i)) % k);
             }
 
             if (k == 4) {
                 int mn1 = k;
                 int mn2 = k;
 
-                for (int i = 1; i <= n; i++) {
+                for (int i = 0; i < n; i++) {
                     int x;
-                    if (a[i] <= 2) {
-                        x = 2 - a[i];
+                    if (list.get(i) <= 2) {
+                        x = 2 - list.get(i);
                     } else {
                         x = 3;
                     }
@@ -39,12 +41,10 @@ public class C1883 {
                         mn2 = Math.min(mn2, x);
                     }
                 }
-                ans = Math.min(ans, mn1 + mn2);
+                sum = Math.min(sum, mn1 + mn2);
             }
 
-            System.out.println(ans);
+            System.out.println(sum);
         }
-
-        sc.close();
     }
 }
